@@ -1,9 +1,11 @@
 import aiosqlite
+import os
 from config import DB_PATH
 
 async def init_db():
     async with aiosqlite.connect(DB_PATH) as db:
-        with open("database/schema.sql", "r") as f:
+        schema_path = os.path.join(os.path.dirname(__file__), "..", "database", "schema.sql")
+        with open(schema_path, "r") as f:
             await db.executescript(f.read())
         await db.commit()
 

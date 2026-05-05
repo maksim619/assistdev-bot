@@ -3,13 +3,13 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 def main_menu():
     buttons = [
-        [InlineKeyboardButton(text="🤖 FAQ-бот (7 000₽)", callback_data="service_1")],
-        [InlineKeyboardButton(text="📄 HR-бот (8 000₽)", callback_data="service_2")],
-        [InlineKeyboardButton(text="💬 Сентимент-анализ (9 000₽)", callback_data="service_3")],
-        [InlineKeyboardButton(text="📅 Запись к специалисту (11 000₽)", callback_data="service_4")],
+        [InlineKeyboardButton(text="🤖 FAQ-бот (5 000₽)", callback_data="service_1")],
+        [InlineKeyboardButton(text="📄 HR-бот (6 000₽)", callback_data="service_2")],
+        [InlineKeyboardButton(text="💬 Анализ отзывов (7 000₽)", callback_data="service_3")],
+        [InlineKeyboardButton(text="📅 Запись к специалисту (9 000₽)", callback_data="service_4")],
         [InlineKeyboardButton(text="📚 RAG-ассистент (15 000₽)", callback_data="service_5")],
-        [InlineKeyboardButton(text="📝 Отзывы", callback_data="reviews")],
-        [InlineKeyboardButton(text="❓ Помощь", callback_data="help")],
+        [InlineKeyboardButton(text="🍽️ Ресторан/кафе (12 000₽)", callback_data="service_6")],
+        [InlineKeyboardButton(text="☕ Кофейня (8 000₽)", callback_data="service_7")],
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
@@ -40,12 +40,6 @@ def extra_package_choice():
         [InlineKeyboardButton(text="✅ Да, полная настройка (+1 500₽)", callback_data="extra_full")],
         [InlineKeyboardButton(text="❌ Нет, только бот (0₽)", callback_data="extra_none")],
         [InlineKeyboardButton(text="🔙 Назад к выбору модели", callback_data="back_to_model_choice")],
-    ])
-
-
-def back_to_extra():
-    return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🔙 Назад к выбору пакета", callback_data="back_to_extra")],
     ])
 
 
