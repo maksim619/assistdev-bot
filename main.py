@@ -10,7 +10,7 @@ required_vars = {
     "BOT_TOKEN": BOT_TOKEN,
     "DEV_ID": DEV_ID,
 }
-missing = [name for name, val in required_vars.items() if not val]
+missing = [name for name, val in required_vars.items() if val is None or val == ""]
 if missing:
     print(f"ОШИБКА: Не заданы переменные окружения: {', '.join(missing)}")
     print("Укажите их в панели Railway → Variables")
